@@ -18,8 +18,8 @@ interface ResultsPanelProps {
 export function ResultsPanel({ cageSize, isComputing, result }: ResultsPanelProps): null | ReactElement {
   if (cageSize === 0) {
     return (
-      <div className='results-panel'>
-        <p className='results-panel__empty'>
+      <div className="results-panel">
+        <p className="results-panel__empty">
           Draw a cage shape above to see valid combinations.
         </p>
       </div>
@@ -28,8 +28,8 @@ export function ResultsPanel({ cageSize, isComputing, result }: ResultsPanelProp
 
   if (isComputing) {
     return (
-      <div className='results-panel'>
-        <p className='results-panel__computing'>Computing...</p>
+      <div className="results-panel">
+        <p className="results-panel__computing">Computing...</p>
       </div>
     );
   }
@@ -39,12 +39,12 @@ export function ResultsPanel({ cageSize, isComputing, result }: ResultsPanelProp
   }
 
   return (
-    <div className='results-panel'>
-      <div className='results-panel__summary'>
-        <span className='results-panel__count'>
+    <div className="results-panel">
+      <div className="results-panel__summary">
+        <span className="results-panel__count">
           {result.totalCount} combination{result.totalCount === 1 ? '' : 's'} found
         </span>
-        <span className='results-panel__time'>
+        <span className="results-panel__time">
           {result.elapsedMs.toFixed(1)}ms
         </span>
       </div>
@@ -57,7 +57,7 @@ export function ResultsPanel({ cageSize, isComputing, result }: ResultsPanelProp
       )}
 
       {result.totalCount === 0 && (
-        <p className='results-panel__none'>
+        <p className="results-panel__none">
           No valid combinations exist for these constraints.
         </p>
       )}
@@ -71,13 +71,13 @@ function CellValueSummary({
   possiblePerCell: readonly ReadonlySet<number>[];
 }): ReactElement {
   return (
-    <div className='cell-summary'>
-      <h3 className='cell-summary__title'>Possible values per cell</h3>
-      <div className='cell-summary__grid'>
+    <div className="cell-summary">
+      <h3 className="cell-summary__title">Possible values per cell</h3>
+      <div className="cell-summary__grid">
         {possiblePerCell.map((values, idx) => (
-          <div className='cell-summary__cell' key={idx}>
-            <span className='cell-summary__cell-label'>{idx + 1}</span>
-            <span className='cell-summary__cell-values'>
+          <div className="cell-summary__cell" key={idx}>
+            <span className="cell-summary__cell-label">{idx + 1}</span>
+            <span className="cell-summary__cell-values">
               {[...values].sort((a, b) => a - b).join(', ')}
             </span>
           </div>
@@ -89,9 +89,9 @@ function CellValueSummary({
 
 function CombinationCard({ values }: { values: readonly number[] }): ReactElement {
   return (
-    <div className='combination-card'>
+    <div className="combination-card">
       {values.map((v, idx) => (
-        <span className='combination-card__value' key={idx}>
+        <span className="combination-card__value" key={idx}>
           {v}
         </span>
       ))}
@@ -118,15 +118,15 @@ function CombinationList({
   const groups = [...grouped.entries()];
 
   return (
-    <div className='combination-list'>
+    <div className="combination-list">
       {groups.map(([op, combos]) => (
-        <div className='combination-list__group' key={op}>
+        <div className="combination-list__group" key={op}>
           {groups.length > 1 && (
-            <h4 className='combination-list__group-title'>
+            <h4 className="combination-list__group-title">
               {OPERATOR_SYMBOLS[op]} ({combos.length})
             </h4>
           )}
-          <div className='combination-list__items'>
+          <div className="combination-list__items">
             {combos.map((combo, idx) => <CombinationCard key={idx} values={combo.values} />)}
           </div>
         </div>

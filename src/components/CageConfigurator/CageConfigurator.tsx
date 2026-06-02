@@ -26,15 +26,15 @@ export function CageConfigurator({
   target
 }: CageConfiguratorProps): ReactElement {
   return (
-    <div className='cage-configurator'>
-      <div className='cage-configurator__field'>
-        <label className='cage-configurator__label' htmlFor='cage-target'>
+    <div className="cage-configurator">
+      <div className="cage-configurator__field">
+        <label className="cage-configurator__label" htmlFor="cage-target">
           Target Value
         </label>
         <input
-          className='cage-configurator__input'
-          id='cage-target'
-          inputMode='numeric'
+          className="cage-configurator__input"
+          id="cage-target"
+          inputMode="numeric"
           min={0}
           onChange={(e) => {
             const val = parseInt(e.target.value, RADIX);
@@ -42,14 +42,14 @@ export function CageConfigurator({
               onTargetChange(val);
             }
           }}
-          type='number'
+          type="number"
           value={target}
         />
       </div>
 
-      <div className='cage-configurator__field'>
-        <label className='cage-configurator__label'>Operator</label>
-        <div className='cage-configurator__operators'>
+      <div className="cage-configurator__field">
+        <label className="cage-configurator__label">Operator</label>
+        <div className="cage-configurator__operators">
           {ALL_OPERATORS.map((op) => (
             <button
               aria-pressed={op === operator}
@@ -59,7 +59,7 @@ export function CageConfigurator({
                 onOperatorChange(op);
               }}
               title={op === 'unknown' ? 'Try all operators' : undefined}
-              type='button'
+              type="button"
             >
               {OPERATOR_SYMBOLS[op]}
             </button>

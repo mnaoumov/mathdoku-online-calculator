@@ -12,9 +12,9 @@ interface GridSizeSelectorProps {
 
 export function GridSizeSelector({ onChange, value }: GridSizeSelectorProps): ReactElement {
   return (
-    <div className='grid-size-selector'>
-      <label className='grid-size-selector__label'>Grid Size</label>
-      <div className='grid-size-selector__buttons'>
+    <div className="grid-size-selector">
+      <label className="grid-size-selector__label">Grid Size</label>
+      <div className="grid-size-selector__buttons">
         {GRID_SIZES.map((size) => (
           <button
             aria-pressed={size === value}
@@ -23,7 +23,7 @@ export function GridSizeSelector({ onChange, value }: GridSizeSelectorProps): Re
             onClick={() => {
               onChange(size);
             }}
-            type='button'
+            type="button"
           >
             {size}&times;{size}
           </button>

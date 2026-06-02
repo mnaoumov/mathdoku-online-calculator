@@ -57,14 +57,14 @@ export function ShapeDrawer({
   const cols = Array.from({ length: canvasSize }, (_, i) => i);
 
   return (
-    <div className='shape-drawer'>
-      <div className='shape-drawer__header'>
-        <label className='shape-drawer__label'>Cage Shape</label>
+    <div className="shape-drawer">
+      <div className="shape-drawer__header">
+        <label className="shape-drawer__label">Cage Shape</label>
         {shape.length > 0 && (
           <button
-            className='shape-drawer__clear-btn'
+            className="shape-drawer__clear-btn"
             onClick={onClear}
-            type='button'
+            type="button"
           >
             Clear
           </button>
@@ -72,7 +72,7 @@ export function ShapeDrawer({
       </div>
 
       <div
-        className='shape-drawer__grid'
+        className="shape-drawer__grid"
         style={{ '--grid-cols': canvasSize } as React.CSSProperties}
       >
         {rows.map((row) =>
@@ -102,7 +102,7 @@ export function ShapeDrawer({
                 onClick={() => {
                   onToggleCell(row, col);
                 }}
-                type='button'
+                type="button"
               >
                 {isSelected && order !== undefined ? order + 1 : ''}
               </button>
@@ -111,19 +111,19 @@ export function ShapeDrawer({
         )}
       </div>
 
-      <div className='shape-drawer__info'>
+      <div className="shape-drawer__info">
         {shape.length === 0 && (
-          <span className='shape-drawer__hint'>
+          <span className="shape-drawer__hint">
             Tap cells to draw the cage shape
           </span>
         )}
         {shape.length > 0 && !isConnected && (
-          <span className='shape-drawer__warning'>
+          <span className="shape-drawer__warning">
             Cells must be orthogonally connected
           </span>
         )}
         {shape.length > 0 && isConnected && (
-          <span className='shape-drawer__status'>
+          <span className="shape-drawer__status">
             {shape.length} cell{shape.length === 1 ? '' : 's'} selected
           </span>
         )}

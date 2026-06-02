@@ -48,16 +48,16 @@ function App(): ReactElement {
   }, [gridSize, shape, target, operator, isShapeConnected, compute]);
 
   return (
-    <div className='app'>
-      <header className='app__header'>
-        <h1 className='app__title'>Mathdoku Calculator</h1>
-        <p className='app__subtitle'>
+    <div className="app">
+      <header className="app__header">
+        <h1 className="app__title">Mathdoku Calculator</h1>
+        <p className="app__subtitle">
           Find all valid combinations for a KenKen cage
         </p>
       </header>
 
-      <main className='app__main'>
-        <section className='app__config'>
+      <main className="app__main">
+        <section className="app__config">
           <GridSizeSelector onChange={setGridSize} value={gridSize} />
           <CageConfigurator
             onOperatorChange={setOperator}
@@ -67,7 +67,7 @@ function App(): ReactElement {
           />
         </section>
 
-        <section className='app__shape'>
+        <section className="app__shape">
           <ShapeDrawer
             gridSize={gridSize}
             isConnected={isShapeConnected}
@@ -78,7 +78,7 @@ function App(): ReactElement {
           />
         </section>
 
-        <section className='app__results'>
+        <section className="app__results">
           <ResultsPanel
             cageSize={shape.length}
             isComputing={isComputing}
