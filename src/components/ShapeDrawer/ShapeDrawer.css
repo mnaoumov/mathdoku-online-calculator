@@ -1,0 +1,110 @@
+.shape-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.shape-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shape-drawer__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.shape-drawer__clear-btn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  transition: all 0.15s ease;
+}
+
+.shape-drawer__clear-btn:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.shape-drawer__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: 2px;
+  max-width: 320px;
+  aspect-ratio: 1;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.shape-drawer__cell {
+  aspect-ratio: 1;
+  min-width: var(--min-touch-target);
+  min-height: var(--min-touch-target);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s ease;
+}
+
+.shape-drawer__cell:hover {
+  background: var(--color-border-light);
+}
+
+.shape-drawer__cell--selected {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: transparent;
+}
+
+.shape-drawer__cell--selected:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Cage outline borders for selected cells */
+.shape-drawer__cell--selected.border-top {
+  border-top: 3px solid var(--color-primary-dark);
+}
+
+.shape-drawer__cell--selected.border-bottom {
+  border-bottom: 3px solid var(--color-primary-dark);
+}
+
+.shape-drawer__cell--selected.border-left {
+  border-left: 3px solid var(--color-primary-dark);
+}
+
+.shape-drawer__cell--selected.border-right {
+  border-right: 3px solid var(--color-primary-dark);
+}
+
+.shape-drawer__info {
+  min-height: 1.5em;
+  font-size: 0.875rem;
+}
+
+.shape-drawer__hint {
+  color: var(--color-text-secondary);
+}
+
+.shape-drawer__warning {
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+.shape-drawer__status {
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,128 @@
+.results-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.results-panel__empty,
+.results-panel__computing,
+.results-panel__none {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.results-panel__summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.results-panel__count {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.results-panel__time {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+}
+
+/* Cell value summary */
+.cell-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.cell-summary__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cell-summary__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.cell-summary__cell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+.cell-summary__cell-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cell-summary__cell-values {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+/* Combination list */
+.combination-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.combination-list__group-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.combination-list__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+/* Combination card */
+.combination-card {
+  display: inline-flex;
+  gap: 2px;
+  padding: var(--spacing-xs);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.combination-card__value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
