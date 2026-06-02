@@ -7,12 +7,12 @@ import {
 import type {
   Cell,
   ConstraintSet
-} from '../../types';
+} from '../types';
 
 import {
   filterByConstraints,
   getConstraintPairs
-} from '../../solver/constraints';
+} from './constraints';
 
 describe('getConstraintPairs', () => {
   it('returns all pairs for horizontal line (all same row)', () => {

@@ -209,7 +209,7 @@ export default defineConfig(
     }
   },
   {
-    files: ['src/__tests__/**'],
+    files: ['src/**/*.test.{ts,tsx}'],
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'off',
       'no-magic-numbers': 'off'

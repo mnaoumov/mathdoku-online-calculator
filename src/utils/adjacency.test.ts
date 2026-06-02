@@ -4,12 +4,12 @@ import {
   it
 } from 'vitest';
 
-import type { Cell } from '../../types';
+import type { Cell } from '../types';
 
 import {
   isConnected,
   isOrthogonallyAdjacent
-} from '../../utils/adjacency';
+} from './adjacency';
 
 describe('isOrthogonallyAdjacent', () => {
   it('returns true for horizontally adjacent cells', () => {

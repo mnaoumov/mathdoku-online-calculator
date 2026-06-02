@@ -4,7 +4,7 @@ import {
   it
 } from 'vitest';
 
-import { generateCandidates } from '../../solver/combinations';
+import { generateCandidates } from './combinations';
 
 describe('generateCandidates', () => {
   describe('addition', () => {
@@ -34,13 +34,13 @@ describe('generateCandidates', () => {
 
   describe('multiplication', () => {
     it('generates pairs with product 6 in a 6x6 grid', () => {
-      const results = generateCandidates(6, 2, 6, '\u00d7');
+      const results = generateCandidates(6, 2, 6, '×');
       // (1,6), (2,3), (3,2), (6,1)
       expect(results).toHaveLength(4);
     });
 
     it('generates triples with product 12 in a 6x6 grid', () => {
-      const results = generateCandidates(6, 3, 12, '\u00d7');
+      const results = generateCandidates(6, 3, 12, '×');
       // (1,2,6), (1,3,4), (1,4,3), (1,6,2), (2,1,6), (2,2,3), (2,3,2), (2,6,1),
       // (3,1,4), (3,2,2), (3,4,1), (4,1,3), (4,3,1), (6,1,2), (6,2,1)
       expect(results).toHaveLength(15);
@@ -61,13 +61,13 @@ describe('generateCandidates', () => {
 
   describe('division', () => {
     it('generates pairs with quotient 2 in a 6x6 grid', () => {
-      const results = generateCandidates(6, 2, 2, '\u00f7');
+      const results = generateCandidates(6, 2, 2, '÷');
       // (1,2), (2,1), (2,4), (3,6), (4,2), (6,3)
       expect(results).toHaveLength(6);
     });
 
     it('returns empty for impossible quotient', () => {
-      expect(generateCandidates(4, 2, 5, '\u00f7')).toHaveLength(0);
+      expect(generateCandidates(4, 2, 5, '÷')).toHaveLength(0);
     });
   });
 

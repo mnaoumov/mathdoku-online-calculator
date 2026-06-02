@@ -4,9 +4,9 @@ import {
   it
 } from 'vitest';
 
-import type { SolverInput } from '../../types';
+import type { SolverInput } from '../types';
 
-import { solve } from '../../solver/solve';
+import { solve } from './solve';
 
 describe('solve', () => {
   it('finds all valid combos for a horizontal pair with addition', () => {
@@ -149,7 +149,7 @@ describe('solve', () => {
   it('handles division with grid size 6', () => {
     const input: SolverInput = {
       gridSize: 6,
-      operator: '\u00f7',
+      operator: '÷',
       shape: [
         { col: 0, row: 0 },
         { col: 0, row: 1 }
